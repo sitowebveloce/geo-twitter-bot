@@ -1,0 +1,306 @@
+:root {
+    --main-color: rgb(29, 161, 242);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+details {
+    padding: 5px;
+    background-color: #f6f7f8;
+    margin: 5px auto;
+}
+
+details[open] {
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
+summary {
+    outline: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(/imgs/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    filter: opacity(.1);
+    z-index: -1;
+}
+
+div.content {
+    width: 100%;
+    height: calc(100% - 60px);
+    margin: 0 auto;
+}
+
+#map {
+    width: 70%;
+    height: 240px;
+    margin: 0 auto;
+}
+
+a.tw-link-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 4px;
+}
+
+a.tw-link-home img {
+    width: 56px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+h1.title {
+    font-size: 3rem;
+    margin-top: 40px;
+}
+
+h1.title strong {
+    text-transform: uppercase;
+    color: #ffffff;
+    background: var(--main-color);
+    padding: 1px 10px;
+    margin-left: 5px;
+}
+
+form {
+    margin: 10px auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+    margin: 5px auto;
+}
+
+form input,
+form button {
+    border: none;
+    padding: 8px;
+    font-size: 1.1rem;
+    background: transparent;
+    border-radius: 2px;
+    transition: 1s ease;
+    outline: none;
+    color: #757575;
+}
+
+form input {
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, .1), inset 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+form button:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+}
+
+form button.tw-btn-submit,
+form button.tw-stop-stream {
+    border-radius: 50%;
+    width: 55px;
+}
+
+.tweets {
+    width: 100%;
+    height: 300px;
+}
+
+div.tweets {
+    width: 70%;
+    margin: 10px auto;
+}
+
+div.tweets ul {
+    padding: 10px;
+}
+
+div.tweets ul li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    list-style: none;
+    margin: 20px auto;
+    border-radius: 2px;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    transition: 1s ease;
+}
+
+div.tweets ul li:hover {
+    transform: scale(1.04);
+}
+
+div.tweets ul li div.tw-header {
+    width: 100%;
+    height: 60px;
+    color: #E1E8ED;
+}
+
+div.tweets ul li div.tw-img {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    margin-right: 10px;
+}
+
+div.tweets ul li div.tw-img img {
+    border-radius: 50%;
+    transition: 1s ease;
+}
+
+div.tweets ul li div.tw-img img:hover {
+    transform: scale(1.4);
+}
+
+div.tweets ul li div.tw-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    background: rgba(0, 0, 0, .2);
+}
+
+div.tweets ul li div.tw-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+div.tweets ul li div.tw-card div {
+    margin-top: 3px;
+    padding: 3px;
+}
+
+div.tweets ul li div.tw-card div.tw-url a {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+div.tweets ul li div.tw-card div.tw-text {
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+div.tweets ul li div.tw-show-map small {
+    cursor: pointer;
+}
+
+div.tweets ul li div.tw-card div.tw-media-url {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+div.tweets ul li div.tw-card div.tw-media-url img {
+    width: 60%;
+}
+
+.up {
+    width: 44px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding: 20px;
+}
+
+a.home img {
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    transform: translate(-50%, -2%);
+    width: 20px;
+    display: inline-block;
+    margin: 5px auto;
+    transition: 1s ease;
+    z-index: 5;
+}
+
+a.home img:hover {
+    transform: translate(-50%, -2%) scale(1.1);
+}
+
+
+/* MEDIA QUERY  */
+
+@media (max-width: 933px) {
+    h1.title {
+        font-size: 2rem;
+    }
+    a.tw-link-home,
+    div.tweets ul {
+        padding: 0;
+    }
+    div.tweets ul li,
+    div.tweets ul li div.tw-card {
+        width: 100%;
+    }
+    div.tweets {
+        width: 85%;
+    }
+    #map {
+        width: 85%;
+        margin: 0 auto;
+    }
+}

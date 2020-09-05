@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Geo</title>
+
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css" />
+
+    <link rel="icon" type="image/svg" href="/imgs/twitter.svg">
+</head>
+
+<body>
+    <!-- HOME  -->
+    <a href="/catalog" class="home"><img src="/imgs/house.svg" alt="home"></a>
+    <!-- CONTENT  -->
+    <div class="content">
+
+        <!-- RELOAD  -->
+        <a href="/" class="tw-link-home">
+            <img src="/imgs/twitter.svg" alt="tw">
+            <h1 class="title"><strong> Geo</strong> Twitter Veloce</h1>
+        </a>
+        <!-- STOP STREAM  -->
+        <form action="/stopstream" method="GET">
+            <button class="tw-stop-stream"><img src="/imgs/stop.svg" alt="stop"></button>
+        </form>
+
+        <!-- LOCATION FORM -->
+        <form action="/" method="POST">
+            <input type="text" name='country' id="country" placeholder="Search Country 'IT', 'UK' ..." />
+            <input type="text" name="region" placeholder="Coutry Region ...">
+            <button class='tw-btn-submit'><img src="/imgs/twitter-btn.svg" alt="tw"></button>
+        </form>
+
+        <!-- MAP  -->
+        <div id="map"></div>
+
+        <!-- TWEETS -->
+        <div class="tweets">
+            <ul class="tweet"></ul>
+        </div>
+
+        <!-- END CONTENT  -->
+    </div>
+
+    <img class="up" src="/imgs/up.svg" alt="up">
+
+    <!-- PASS DATA FROM BACKEND  -->
+    <script>
+        let key = '<%- key %>';
+    </script>
+    <!-- SOCKET IO  -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- MAIN JS  -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
