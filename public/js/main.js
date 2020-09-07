@@ -1,6 +1,17 @@
 const tweetUl = document.querySelector('.tweet');
 const mapDiv = document.querySelector('.map');
 const up = document.querySelector('.up');
+const msg = document.querySelector('.msg');
+
+// SHOW MESSAGES FUNCTION
+function showMsgs(message) {
+    msg.innerHTML = `<span>${message}</span>`;
+    // Clear after 6s
+    setTimeout(() => {
+        msg.innerHTML = `<span>${message}</span>`
+        msg.innerHTML = '';
+    }, 6000);
+};
 
 // SHOW MAP FUNCTION
 var mymap = null;
@@ -88,6 +99,8 @@ socket.on('latlng', latLngArr => {
     // Run show map
     showMap(key, latLngArr, '7');
 })
+ // ON MESSAGES 
+socket.on('error', error => showMsgs(error));
 
 // GO ON PAGE TOP
 // Check page scoll top

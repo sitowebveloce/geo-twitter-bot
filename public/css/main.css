@@ -59,7 +59,15 @@ div.content {
     height: calc(100% - 60px);
     margin: 0 auto;
 }
-
+div.content .msg {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    left: 40px;
+    padding: 5px;
+    color: var(--main-color);
+    font-weight: 800;
+}
 #map {
     width: 70%;
     height: 240px;

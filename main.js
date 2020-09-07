@@ -54,7 +54,12 @@ const geoStream = async(geoLocation) => {
             socketIo.emit('tweet', tweet);
         })
         .on("ping", () => console.log("ping"))
-        .on("error", error => console.log("error", error))
+        .on("error", error =>  {
+            console.log("error", error.source);
+            // Emit error Message
+            socketIo.emit("error", error.source);
+            stopStream()
+        })
         .on("end", response => console.log("end"));
 };
 //
