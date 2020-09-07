@@ -8,7 +8,6 @@ function showMsgs(message) {
     msg.innerHTML = `<span>${message}</span>`;
     // Clear after 6s
     setTimeout(() => {
-        msg.innerHTML = `<span>${message}</span>`
         msg.innerHTML = '';
     }, 6000);
 };
